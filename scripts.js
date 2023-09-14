@@ -7,13 +7,33 @@ let stopSorting = false;
 
 function generateArray() {
     if (sorting) return;
-    //Если массив не сортируется то обнуляем массив и отчищаем контейнер
+
+    const sizeInput = document.querySelector('.array-size');
+    const minValueInput = document.querySelector('.min-value');
+    const maxValueInput = document.querySelector('.max-value');
+
+    const size = parseInt(sizeInput.value);
+    const minValue = parseInt(minValueInput.value);
+    const maxValue = parseInt(maxValueInput.value);
+
+    // Проверяем корректность введенных значений
+    if (isNaN(size) || isNaN(minValue) || isNaN(maxValue)) {
+        alert('Пожалуйста, введите корректные значения.');
+        return;
+    }
+
+    if (minValue >= maxValue) {
+        alert('Минимальное значение должно быть меньше максимального.');
+        return;
+    }
+
+    
     array = [];
     const container = document.querySelector('.array-container');
     container.innerHTML = '';
 
-    for (let i = 0; i < 50; i++) {
-        const value = Math.floor(Math.random() * 200) + 10;
+    for (let i = 0; i < size; i++) {
+        const value = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
         const bar = document.createElement('div');
         bar.className = 'array-bar';
         bar.style.height = `${value}px`;
