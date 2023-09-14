@@ -5,21 +5,27 @@
     <link rel="stylesheet"  href="styles.css">
 </head>
 <body>
-    <h1>Sorting Visualization</h1>
-    <label for="array-size">Количество элементов:</label>
-    <input type="number" class="array-size" min="1" max="100" value="50">
-    <label for="min-value">Минимальное значение:</label>
-    <input type="number" class="min-value" min="1" max="100" value="10">
-    <label for="max-value">Максимальное значение:</label>
-    <input type="number" class="max-value" min="1" max="200" value="210">
-    <div class="array-container"></div>
-    <button class="generate-array-btn">Generate Array</button>
-    <button class="bubble-sort-btn">Bubble Sort</button>
-    <button class="selection-sort-btn">Selection Sort</button>
-    <button class="insertion-sort-btn">Insertion Sort</button>
-    <button class="quick-sort-btn">Quick Sort</button>
-    <button class="merge-sort-btn">Merge Sort</button>
-    <button class="stop-sorting-btn">Stop Sorting</button>
+    <div class="wrapper">
+        <h1>Sorting Visualization</h1>
+        <div class="inputs__field">
+            <label for="array-size">Number of elements:</label>
+            <input type="number" class="array-size" min="1" max="100" value="50">
+            <label for="min-value">Min value:</label>
+            <input type="number" class="min-value" min="1" max="100" value="10">
+            <label for="max-value">Max value:</label>
+            <input type="number" class="max-value" min="1" max="200" value="200">
+        </div>
+        <div class="array-container"></div>
+        <div class="controls__field">
+            <button class="generate-array-btn">Generate Array</button>
+            <button class="bubble-sort-btn">Bubble Sort</button>
+            <button class="selection-sort-btn">Selection Sort</button>
+            <button class="insertion-sort-btn">Insertion Sort</button>
+            <button class="quick-sort-btn">Quick Sort</button>
+            <button class="merge-sort-btn">Merge Sort</button>
+            <button class="stop-sorting-btn">Stop Sorting</button>
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>

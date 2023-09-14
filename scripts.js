@@ -27,11 +27,11 @@ function generateArray() {
         return;
     }
 
-    
     array = [];
     const container = document.querySelector('.array-container');
     container.innerHTML = '';
 
+    //Заполняем массив данными и отрисовываем по ним соответствующие столбцы 
     for (let i = 0; i < size; i++) {
         const value = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
         const bar = document.createElement('div');
@@ -42,7 +42,7 @@ function generateArray() {
     }
 }
 
-
+//Для обновления перерисовываем значения в столбцах на новые
 function updateArrayDisplay() {
     const bars = document.querySelectorAll('.array-bar');
     for (let i = 0; i < array.length; i++) {
@@ -50,7 +50,7 @@ function updateArrayDisplay() {
     }
 }
 
-
+//Меняем элементы местами с задержкой 50ms
 async function swap(i, j) {
     await new Promise((resolve) => setTimeout(resolve, 50));
     [array[i], array[j]] = [array[j], array[i]];
@@ -76,6 +76,8 @@ async function doSort(sortFunction) {
     sorting = false;
 }
 
+
+//Функции, отвечающие за алгоритмы сортировки
 
 async function bubbleSort() {
     const n = array.length;
